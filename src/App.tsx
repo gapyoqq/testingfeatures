@@ -6,8 +6,10 @@ import {Rating} from "./components/Accordion/Rating/Rating";
 function App() {
     return (
         <div className="App">
-            <Accordion/>
-            <Rating value = {4}/>
+            <Accordion collapsed ={true} title = {'menu'}/>
+            <Rating value = {1}/>
+            <Accordion collapsed ={false} title = {'users'}/>
+            <Rating value = {1}/>
         </div>
     );
 }
