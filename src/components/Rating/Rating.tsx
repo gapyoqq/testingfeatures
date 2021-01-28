@@ -1,6 +1,6 @@
 import React from "react";
 import {Star} from "./Star/Star";
-import {RatingValueType} from "../../../App";
+import {RatingValueType} from "../../App";
 
 
 type PropsType = {

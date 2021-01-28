@@ -1,10 +1,11 @@
 
 
-/*import {Star} from "./Star/Star";
+/*
+import {Star} from "./Star/Star";
 import React, {useState} from "react";
 
 
-type PropsType = {}
+
 
 export function UncontrolledRating(props: PropsType) {
 
@@ -18,6 +19,7 @@ export function UncontrolledRating(props: PropsType) {
         <Star value={4} setValue={setValue} selected = {value > 3}/>
         <Star value={5} setValue={setValue} selected = {value > 4}/>
     </div>
-}*/
+}
+*/
 
-
+export const a = 1

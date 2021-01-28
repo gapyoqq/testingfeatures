@@ -1,12 +1,15 @@
 import React from "react";
 
-type PropsType = {
+export type AccordionPropsType = {
+    /**
+     * The name of accordion
+     */
     title: string
     setAccordionCollapsed:()=>void
     accordionCollapsed: boolean
 }
 
-export function Accordion(props: PropsType) {
+export function Accordion(props: AccordionPropsType) {
     return <div>
         <AccordionTitle setAccordionCollapsed={props.setAccordionCollapsed} title={props.title}/>
         {!props.accordionCollapsed && <AccordionBody/>}
@@ -15,7 +18,7 @@ export function Accordion(props: PropsType) {
 
 
 function AccordionTitle(props: { title: string,setAccordionCollapsed:()=>void }) {
-    return <h3 onClick={()=>props.setAccordionCollapsed()}>
+    return <h3 onClick={(e)=>props.setAccordionCollapsed()}>
         {props.title}
     </h3>
 }

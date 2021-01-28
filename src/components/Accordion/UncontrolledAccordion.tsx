@@ -26,7 +26,8 @@ function AccordionTitle(props: { title: string, setCollapsedCB: () => void }) {
 function AccordionBody() {
     return <ul>
         <li>1</li>
-        <li>2</li>0
+        <li>2</li>
         <li>3</li>
     </ul>
 }
+
