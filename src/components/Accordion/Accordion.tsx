@@ -1,32 +1,46 @@
 import React from "react";
 
+type ItemType = {
+    title: string
+    value: any
+}
+
 export type AccordionPropsType = {
     /**
      * The name of accordion
      */
     title: string
-    setAccordionCollapsed:()=>void
+    setAccordionCollapsed: () => void
     accordionCollapsed: boolean
+    color?: string
+    items: Array<string>
 }
 
 export function Accordion(props: AccordionPropsType) {
     return <div>
-        <AccordionTitle setAccordionCollapsed={props.setAccordionCollapsed} title={props.title}/>
-        {!props.accordionCollapsed && <AccordionBody/>}
+        <AccordionTitle setAccordionCollapsed={props.setAccordionCollapsed} title={props.title}
+                        color={props.color}/>
+        {!props.accordionCollapsed && <AccordionBody items={props.items}/>}
     </div>
 }
 
 
-function AccordionTitle(props: { title: string,setAccordionCollapsed:()=>void }) {
-    return <h3 onClick={(e)=>props.setAccordionCollapsed()}>
+type AccordionTitlePropsType = {
+    title: string
+    setAccordionCollapsed: () => void
+    color?: string
+}
+
+function AccordionTitle(props: AccordionTitlePropsType) {
+    return <h3
+        style={{color: props.color ? props.color : 'black'}}
+        onClick={(e) => props.setAccordionCollapsed()}>
         {props.title}
     </h3>
 }
 
-function AccordionBody() {
+function AccordionBody(props: { items: Array<string>}) {
     return <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
+        {props.items.map((i, index) => <li key={index}>{i}</li>)}
     </ul>
 }
